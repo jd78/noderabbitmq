@@ -1,9 +1,12 @@
 const index = require('../lib/index')
 const connectionManager = require('../lib/connection-manager')
 
-index.initialize({
-    serverUrl: 'amqp://localhost'
-}).then(() => {
+let initialize = async () => {
+    await index.initialize({
+        serverUrl: 'amqp://localhost'
+    })
     connectionManager.exchangeDeclare('test', 'fanout', true)
-})
+}
+
+initialize()
 
