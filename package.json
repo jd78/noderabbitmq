@@ -1,0 +1,25 @@
+{
+  "name": "noderabbitmq",
+  "version": "1.0.0",
+  "description": "Node.js rabbitmq library",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jd78/noderabbitmq.git"
+  },
+  "keywords": [
+    "rabbitmq"
+  ],
+  "author": "Gennaro Del Sorbo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jd78/noderabbitmq/issues"
+  },
+  "homepage": "https://github.com/jd78/noderabbitmq#readme",
+  "dependencies": {
+    "amqplib": "^0.5.1"
+  }
+}
