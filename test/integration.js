@@ -13,6 +13,7 @@ let initialize = async () => {
     await index.initialize({
         serverUrl: 'amqp://localhost',
         publishConfirmation: true,
+        prefetch: 1000,
         handlers: handlers
     })
 
