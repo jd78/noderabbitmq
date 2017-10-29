@@ -2,7 +2,7 @@ const index = require('../lib/index')
 const connectionManager = require('../lib/connection-manager')
 
 let handlers = new Map()
-handlers.set('test', require('./test-message-handler'))
+handlers.set('testType', require('./test-message-handler'))
 
 let initialize = async () => {
     await index.initialize({
@@ -18,7 +18,14 @@ let initialize = async () => {
     connectionManager.queueBind('test.inbound', 'test', '#')
 
     await connectionManager.initializePublisher()
-    connectionManager.publish('test', 'testType', 'correlationId', 'key', 'some message')
+
+    connectionManager.startConsumer('test.inbound')
+
+    let testObj = {
+        name: 'pippo'
+    }
+
+    connectionManager.publish('test', 'testType', 'correlationId', 'key', JSON.stringify(testObj))
 }
 
 initialize()
