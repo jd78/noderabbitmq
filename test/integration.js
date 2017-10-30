@@ -9,12 +9,13 @@ let initialize = async () => {
         serverUrl: 'amqp://localhost',
         publishConfirmation: true,
         prefetch: 1000,
+        consumeInSequence: true,
         handlers: handlers
     })
 
     await connectionManager.initializeTopologyChannel([
         { op: 'exchangeDeclare', name: 'test', type: 'topic', durable: true },
-        { op: 'queueDeclare', name: 'test.inbound', durable: true, autodelete: false, options: { "x-message-ttl": 20000 } },
+        { op: 'queueDeclare', name: 'test.inbound', durable: true, autodelete: false, options: { "x-message-ttl": 9999999 } },
         { op: 'queueBind', queueName: 'test.inbound', exchangeName: 'test', routingKey: '#' }
     ])
 

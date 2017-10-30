@@ -13,7 +13,7 @@ let initialize = async () => {
 
     await connectionManager.initializePublisher()
 
-    for(let i=0; i<100;i++){
+    for(let i=0; i<100000;i++){
         let testObj = {
             id: i,
             name: 'pippo'

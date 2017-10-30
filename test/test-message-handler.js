@@ -8,4 +8,5 @@ let asyncLog = m => new Promise((resolve, reject) => {
 
 module.exports = async (message, header) => {
     await asyncLog(message)
+    //console.log(message)
 }
