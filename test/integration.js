@@ -10,6 +10,7 @@ let initialize = async () => {
         publishConfirmation: true,
         prefetch: 1000,
         consumeInSequence: true,
+        exclusiveConsumer: true,
         handlers: handlers
     })
 
