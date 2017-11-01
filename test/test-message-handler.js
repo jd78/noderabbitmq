@@ -1,7 +1,7 @@
 const lib = require('../lib/index')
 
 let asyncLog = m => new Promise((resolve, reject) => {
-    var randomnumber = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
+    var randomnumber = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
     setTimeout(() => {
         console.log(m)
         resolve()
